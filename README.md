@@ -2,7 +2,7 @@
 Here we shall try to do some cool stuffs with Neo4j
 
 ## Dataset files Description
-* small_grouped_data.csv contains all the movies with their properties(columns). To load them in your database, use the Cypher Query below:
+* *small_grouped_data.csv* : Contains all the movies with their properties(columns). To load them in your database, use the Cypher Query below:
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/Foutse/Neo4j_experiences/main/dataset_movie/small_grouped_data.csv' AS l FIELDTERMINATOR ',' CREATE(m:MovieLens{M_movieId:toInteger(l.movieId),
 M_rating:apoc.convert.fromJsonList(l.rating),M_userId:apoc.convert.fromJsonList(l.userId),
 M_timestamp:l.timestamp,M_title:l.title,M_summary:l.summary,M_year:toInteger(l.movie_year),M_genres:apoc.convert.fromJsonList(l.genres),
@@ -19,8 +19,8 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/Foutse/Neo4j_exper
    ON CREATE SET j.weight = toFloat(l.weight)
 RETURN count(j) as total_relations
 The same logic applies for the other relationship files.
-* user_rel_all.csv Relationship based on common users who watched the movies
-* usertag_rel_all.csv Relationship based on common users who tagged the movies
-* summary_textSimBert_all.csv Relationship based on similarity between the text summary of the movies, fixed to a certain treshold
-* rating_vectordown_rel_all.csv Relationship based on similarity between their rating vector
-* movie_tag_rel_all.csv Relationship based on the common tags they have
+* *user_rel_all.csv* : Relationship based on common users who watched the movies
+* *usertag_rel_all.csv* : Relationship based on common users who tagged the movies
+* *summary_textSimBert_all.csv* : Relationship based on similarity between the text summary of the movies, fixed to a certain treshold
+* *rating_vectordown_rel_all.csv* : Relationship based on similarity between their rating vector
+* *movie_tag_rel_all.csv* : Relationship based on the common tags they have
