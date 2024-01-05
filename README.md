@@ -1,4 +1,4 @@
-# Neo4j_experiences
+# Talk with your Neo4j DB
 Here we shall try to do some cool stuffs with Neo4j
 
 ## Dataset files Description
