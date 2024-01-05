@@ -24,3 +24,5 @@ The same logic applies for the other relationship files.
 * *summary_textSimBert_all.csv* : Relationship based on similarity between the text summary of the movies, fixed to a certain treshold
 * *rating_vectordown_rel_all.csv* : Relationship based on similarity between their rating vector
 * *movie_tag_rel_all.csv* : Relationship based on the common tags they have
+
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
