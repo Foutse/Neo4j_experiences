@@ -11,7 +11,7 @@ M_unique_Uid_tags:apoc.convert.fromJsonList(l.unique_Uid_tags),M_round_ratings:a
 M_rating_vector:apoc.convert.fromJsonList(l.rating_vector),M_round_ratingsup:apoc.convert.fromJsonList(l.round_ratingsup),
 M_round_ratingsdown:apoc.convert.fromJsonList(l.round_ratingsdown),M_rating_vectorup:apoc.convert.fromJsonList(l.rating_vectorup),
 M_rating_vectordown:apoc.convert.fromJsonList(l.rating_vectordown)}) RETURN count(m)
-* genre_rel_all.csv contains the relationship between movies based on common genre. The weight represents the jaccard similarity of their genre list. You can load the relationship to your AuraDB as follows:
+* *genre_rel_all.csv* : contains the relationship between movies based on common genre. The weight represents the jaccard similarity of their genre list. You can load the relationship to your AuraDB as follows:
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/Foutse/Neo4j_experiences/main/dataset_movie/genre_rel_all.csv' AS l FIELDTERMINATOR ',' 
   MATCH (m1:MovieLens {M_movieId: toInteger(l.source)}), (m2:MovieLens {M_movieId: toInteger(l.target)})
    WHERE m1 <> m2 AND toFloat(l.weight) > 0
